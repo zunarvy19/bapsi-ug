@@ -37,4 +37,8 @@ class ViewController extends Controller
     public function infrastruktur(){
         return view('user.infrastruktur', ['title' =>  'Infrastruktur TIK']);
     }
+
+    public function dashboardAdmin(){
+        return view('admin.dashboardAdmin', ['title' =>  'Dashboard Admin']);
+    }
 }
