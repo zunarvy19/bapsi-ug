@@ -3,8 +3,10 @@
 
 @section('main')
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
-  <div class="px-48  my-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="border-l-8 h-[200px] pt-16 border-primary pl-2 rounded-sm  text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">{{$title}}</h1>
+  <div class="px-10 md:px-48 my-auto max-w-screen-xl text-center py-24 lg:py-56">
+    <h1 class="h-[120px] md:h-[200px] pt-16 border-b-8 md:border-b-0 md:border-l-8 border-primary pl-2 rounded-sm text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-center md:text-start">
+      {{$title}}
+    </h1>
   </div>
 </section>
 
@@ -19,7 +21,7 @@
         <img src="/img/infra1.png" alt="Infrastruktur TIK Gunadarma" class="mx-auto">
       </div>
     
-    <div class="text-justify text-base md:text-lg font-sans">
+    <div class="text-justify text-base md:text-lg font-sans px-6">
       <p>
         Pada gambar di atas, keterhubungan masing-masing lokasi infrastruktur jaringan komputer dikembangkan untuk  menghubungkan seluruh kampus
         sebagai satu sistem yang terintegrasi sehingga mempermudah dan mempercepat operasional akademik maupun pengakuan sumber bahan ajar,

@@ -5,12 +5,12 @@
 {{-- Hero --}}
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
   <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Badan Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
+      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-4xl  font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Badan Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
   </div>
 </section>
 
 {{-- Cards --}}
-<div class="flex justify-center items-center flex-col md:flex-row mx-auto md:gap-x-6 -mt-20">
+<div class="flex justify-center items-center flex-col md:flex-row mx-auto gap-y-4 md:gap-x-6 -mt-20">
 
 
 <div class="max-w-sm">
@@ -44,19 +44,23 @@
 </div>
 
 {{-- About Us --}}
-<div class="mt-40 mb-2 flex sm:w-[80%] mx-auto">
-  <div class="container flex flex-row ">
+<div class="mt-40 mb-10 flex sm:w-[80%] mx-auto">
+  <div class="container flex flex-col-reverse md:flex md:flex-row">
     <div class="text space-y-6 basis-1/2 pt-20">
       <p class="text-4xl md:text-4xl font-bold text-center md:text-start" id="section2">Tentang</p>
       <hr class="border-4 w-28 mx-auto md:mx-0 border-primary">
-      <p class="text-md md:text-xl text-center md:text-start leading-loose md:leading-loose text-[#626f80]">
-        BAPSI, yang merupakan singkatan dari Biro Administrasi Perencanaan dan Sistem Informasi di Universitas Gunadarma, bertanggung jawab atas pengaturan 
+      <p class="text-md md:text-xl text-start md:text-start leading-loose md:leading-loose text-[#626f80] px-10 md:px-0 ">
+        <span class="font-bold">BAPSI</span>
+        , yang merupakan singkatan dari Biro Administrasi Perencanaan dan Sistem Informasi di Universitas Gunadarma, bertanggung jawab atas pengaturan 
         dan pengembangan sistem informasi universitas. BAPSI bekerja di bawah pengawasan Rektor melalui Wakil Rektor 
         dan memiliki peran penting dalam pengembangan serta pemeliharaan teknologi informasi yang mendukung layanan akademik dan pembelajaran berbasis teknologi informasi.
       </p>
-      <button type="button" class="text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-        <a href="/">Selengkapnya &rarr;</a>
-      </button>
+
+      <div class="flex justify-center md:justify-start ">
+        <button type="button" class="text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  md:mx-0">
+          <a href="/tentang-kami">Selengkapnya &rarr;</a>
+        </button>
+      </div>
     </div>
     <div class="md:basis-1/2 flex justify-center md:justify-start">
       <img src="/img/aboutUs.png" alt="About BAPSI" class="w-[90%] mx-auto md:mx-0 mb-10">
@@ -66,24 +70,24 @@
 
 
 {{-- visi misi --}}
-<div class="w-screen h-auto bg-[#F3F4F6]">
+<div class="w-full md:w-screen h-auto bg-[#F3F4F6]">
   <div class="py-20">
-    <h1 class="text-center text-4xl md:text-4xl font-bold" id="fitur">Visi & Misi</h1>
+    <h1 class="text-center text-4xl  md:text-5xl font-bold" id="fitur">Visi & Misi</h1>
     <hr class="border-4 border-primary w-[10rem] mx-auto">
     <div class="bg-white p-6 shadow-lg w-[70%] mx-auto rounded-xl mt-5">
       <div class="mb-4">
-        <h2 class="text-2xl font-bold">Visi</h2>
-        <hr class="border-primary border-2 w-10">
+        <h2 class="text-3xl font-bold">Visi</h2>
+        <hr class="border-primary border-2 w-12">
       </div>
-      <ol class="list-decimal ml-6 mb-6">
+      <ol class="list-decimal ml-6 mb-6 text-base">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
           <li>Imperdiet sed euismod nisi porta lorem mollis aliquam ut.</li>
           <li>Dignissim convallis aenean et tortor at risus viverra adipiscing. In est ante in nibh mauris cursus mattis.</li>
       </ol>
 
       <div class="mb-4">
-        <h2 class="text-2xl font-bold">Misi</h2>
-        <hr class="border-primary border-2 w-10">
+        <h2 class="text-3xl font-bold">Misi</h2>
+        <hr class="border-primary border-2 w-12">
       </div>
       <ol class="list-decimal ml-6">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
@@ -99,9 +103,11 @@
 <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-6 w-[70%] mx-auto my-10">
   <!-- Section Latest News -->
   <div class="flex-1">
-      <h2 class="text-4xl font-bold mb-2">Latest News</h2>
+    <div class="flex justify-center flex-col">
+      <h2 class="text-4xl md:text-5xl font-bold mb-2 ">Latest News</h2>
       <div class="border-t-4 border-primary w-32 mb-4"></div>
-      <div class="bg-white p-4 rounded-lg flex flex-col space-y-4 border-">
+    </div>
+      <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
           <div class="flex flex-col md:flex-row md:space-x-4">
               <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
               <div>
@@ -134,7 +140,7 @@
               <h4 class="font-bold">Gunadarma University Celebrates Grand Inauguration of State-of-the-Art Technology Hub</h4>
           </div>
       </div>
-      <button class="self-start bg-primary text-white px-4 py-2 rounded-lg ">Berita Lainnya &rarr;</button>
+      <button class="self-start bg-primary text-white px-4 py-2 rounded-lg "><a href="/berita">Berita Lainnya &rarr;</a></button>
   </div>
 </div>
 
@@ -144,11 +150,11 @@
 
 <div class="mx-auto" id="ugonthepress">
   <div class="mx-auto text-center mb-12">
-    <h2 class="text-4xl font-bold mb-2">UG On The Press</h2>
-    <div class="border-t-4 border-primary w-12 mb-4 mx-auto"></div>
+    <h2 class="text-4xl md:text-5xl font-bold mb-2">UG On The Press</h2>
+    <div class="border-t-8 border-primary w-32 mb-4 mx-auto"></div>
   </div>
 
-  <div class="flex justify-center">
+  <div class="flex justify-center flex-col md:flex-row">
     <div class="p-4 max-w-md">
       <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md !rounded-br-3xl overflow-hidden">
         <img class="h-48 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
@@ -249,12 +255,12 @@
 </div>
 
 {{-- Detail Ask --}}
-<div class="max-w-full bg-primary p-32">
-  <h1 class="text-3xl text-white font-bold">JIKA ANDA BELUM MENEMUKAN INFORMASI YANG ANDA BUTUHKAN, 
+<div class="w-full  bg-primary p-10 md:p-32">
+  <h1 class="prose text-lg text-start md:text-3xl text-white font-bold">JIKA ANDA BELUM MENEMUKAN INFORMASI YANG ANDA BUTUHKAN, 
     SILAKAN SEGERA HUBUNGI HELPDESK UNTUK MENDAPATKAN BANTUAN 
     DAN SOLUSI.</h1>
     
-    <button type="button" class="mt-4 bg-white text-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"><a href="#">
+    <button type="button" class="mt-4 bg-white text-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"><a href="/helpdesk">
       <span class="font-semibold">Helpdesk</span>  
     </a></button>
 </div>
@@ -264,11 +270,11 @@
 </div>
 
 <div class="container mx-auto my-10">
-  <div class="grid grid-cols-2 gap-2">
+  <div class="grid grid-rows-2 md:grid-cols-2 md:gap-2 px-10 md:px-0">
     <!-- Left side: Title -->
     <div class="flex flex-col justify-center">
-      <h2 class="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-      <div class="border-b-4 border-purple-500 w-24"></div>
+      <h2 class="text-4xl md:text-5xl font-bold text-center md:text-start">Frequently Asked Questions</h2>
+      <div class="border-b-8 border-primary w-24 mx-auto md:mx-0 md:my-3"></div>
     </div>
 
     <!-- Right side: Accordion -->

@@ -2,20 +2,22 @@
 
 @section('main')
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
-  <div class="px-48  my-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="border-l-8 h-[200px] pt-16 border-primary pl-2 rounded-sm  text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Standart Operating Procedure</h1>
+  <div class="px-10 md:px-48 my-auto max-w-screen-xl text-center py-24 lg:py-56">
+    <h1 class=" md:h-[200px] pt-16 md:pt-16 border-b-8 md:border-b-0 md:border-l-8 border-primary pl-2 rounded-sm text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-center md:text-start">
+      Standard Operating Procedure
+    </h1>
   </div>
 </section>
 
 <div class="my-16 mb-2 flex sm:w-[80%] mx-auto">
   <div>
-    <div class="gap-y-3">
-      <p class="text-4xl md:text-4xl font-bold md:text-start my-2" id="section2">Standart Operating Procedure (SOP)</p>
+    <div class="gap-y-3 px-2">
+      <p class="text-4xl md:text-4xl font-bold md:text-start my-2 text-center" id="section2">Standart Operating Procedure (SOP)</p>
       <hr class="border-4 w-96 mx-auto md:mx-0 border-primary">
     </div>
 
 
-    <div class="my-10 text-justify text-base md:text-lg font-sans">
+    <div class="my-10 text-justify text-base md:text-lg font-sans px-8">
       <p>
         <span class="font-bold">Standart Operating Procedure (SOP)</span>
         <div class="pl-10">
