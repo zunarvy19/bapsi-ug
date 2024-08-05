@@ -30,11 +30,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/dashboard-admin', [ViewController::class, 'dashboardAdmin'])->name('admin.dashboardAdmin');
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
     Route::get('/admin/berita/halaman-buat-berita', [BeritaController::class, 'create'])->name('create');
     Route::get('/admin/berita/{berita:slug}', [BeritaController::class, 'show']);
     Route::post('/admin/berita/buat-berita', [BeritaController::class, 'store'])->name('store');
+    Route::delete('/admin/hapus-berita/{berita:slug}', [BeritaController::class, 'destroy'])->name('destroy');
     route::get('/admin/berita/checkSlug', [BeritaController::class, 'checkSlug']);
+
+    // edit
+    Route::get('/admin/berita/halaman-edit-berita/{berita:slug}/edit', [BeritaController::class, 'edit'])->name('edit');
+    Route::put('/admin/berita/edit-berita/{berita:slug}', [BeritaController::class, 'update'])->name('update');
 });
 
 Route::get('/tentang-kami', [ViewController::class, 'tentang'])->name('user.tentang');

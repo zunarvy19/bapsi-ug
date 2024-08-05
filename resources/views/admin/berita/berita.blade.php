@@ -46,7 +46,7 @@
         <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$no++}}</th>
         <td class="px-4 py-3 capitalize">{{$data->title}}</td>
         <td class="px-4 py-3">{{$data->excerpt}}</td>
-        <td class="px-4 py-3">{{$data->created_at}}</td>
+        <td class="px-4 py-3">{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, j F Y') }}</td>
         <td class="px-4 py-3">
                 <ul class=" text-sm flex flex-col md:flex-row items-center justify-center" aria-labelledby="apple-imac-27-dropdown-button">
                     <li>
@@ -61,7 +61,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/berita/{{$data->slug}}"> 
+                        <a href="/admin/berita/halaman-edit-berita/{{$data->slug}}/edit"> 
                             <button type="button" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                                 <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -72,7 +72,7 @@
                         </a>
                     </li>
                     <li>
-                        <form id="delete-form-"  action="/admin/berita/{{$data->slug}}" method="POST">
+                        <form id="delete-form-"  action="/admin/hapus-berita/{{$data->slug}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button onclick="" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">

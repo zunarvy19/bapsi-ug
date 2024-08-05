@@ -56,9 +56,8 @@ class BeritaController extends Controller
      */
     public function show(Berita $berita)
     {
-        $berita = Berita::all();
-
-        return view('admin.berita.detail', ['title' => 'Detail Berita'], compact('berita'));
+        // dd($berita);
+        return view('admin.berita.detail', ['title' => 'Detail Berita', 'berita' => $berita]);
     }
 
     /**
@@ -66,7 +65,7 @@ class BeritaController extends Controller
      */
     public function edit(Berita $berita)
     {
-        //
+        return view('admin.berita.edit', compact('berita'), ['title' => "Edit Berita"]);
     }
 
     /**
@@ -74,7 +73,22 @@ class BeritaController extends Controller
      */
     public function update(Request $request, Berita $berita)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ];
+    
+        if ($request->slug != $berita->slug) {
+            $rules['slug'] = 'required|unique:beritas';
+        }
+    
+        $validatedData = $request->validate($rules);
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+    
+        $berita->update($validatedData);
+    
+        return redirect()->route('admin.berita.index')->with('status', 'Berita berhasil diupdate');
     }
 
     /**
@@ -82,7 +96,8 @@ class BeritaController extends Controller
      */
     public function destroy(Berita $berita)
     {
-        //
+        Berita::destroy($berita->id);
+        return redirect()->route('admin.berita.index')->with('status', 'Berita berhasil dihapus');
     }
 
     public function checkSlug(Request $request){
