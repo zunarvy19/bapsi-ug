@@ -35,21 +35,33 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the request data
         $validatedData = $request->validate([
-            'title' => ['required','min:5'],
-            'slug' => ['required','min:10', 'unique:beritas'],
-            // 'gambar' => ['required','image','mimes:jpeg,png,jpg']
+            'title' => ['required', 'min:5'],
+            'slug' => ['required', 'min:10', 'unique:beritas'],
+            'image' => ['required', 'image', 'mimes:jpeg,png,jpg'],
             'body' => 'required'
         ]);
-
+    
+        // Debug the validated data
+        ddd($validatedData);
+    
+        // Store the image if it exists
+        if ($request->hasFile('image')) {
+            $validatedData['image'] = $request->file('image')->store('berita-gambar');
+        }
+    
+        // Add additional fields
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request -> body, 200));
-        // dd($validatedData);
-
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+    
+        // Create a new Berita record
         Berita::create($validatedData);
-
+    
+        // Redirect to the index page with a success message
         return redirect()->route('admin.berita.index')->with('status', 'Berita berhasil ditambahkan');
     }
+    
 
     /**
      * Display the specified resource.

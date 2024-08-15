@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.dashboard', ['title'=>'Dashboard']);
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -43,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin/berita/edit-berita/{berita:slug}', [BeritaController::class, 'update'])->name('update');
 });
 
+Route::get('/', [ViewController::class, 'dashboard'])->name('user.dashboard');
 Route::get('/tentang-kami', [ViewController::class, 'tentang'])->name('user.tentang');
 Route::get('/struktur-bapsi', [ViewController::class, 'struktur'])->name('user.struktur');
 Route::get('/staffsite', [ViewController::class, 'staffsite'])->name('user.staffsite');

@@ -5,7 +5,7 @@
 {{-- Hero --}}
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
   <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-4xl  font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Badan Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
+      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-4xl  font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Biro Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
   </div>
 </section>
 
@@ -79,7 +79,7 @@
         <h2 class="text-3xl font-bold">Visi</h2>
         <hr class="border-primary border-2 w-12">
       </div>
-      <ol class="list-decimal ml-6 mb-6 text-base">
+      <ol class="list-decimal ml-6 mb-6 text-base font-sans">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
           <li>Imperdiet sed euismod nisi porta lorem mollis aliquam ut.</li>
           <li>Dignissim convallis aenean et tortor at risus viverra adipiscing. In est ante in nibh mauris cursus mattis.</li>
@@ -89,7 +89,7 @@
         <h2 class="text-3xl font-bold">Misi</h2>
         <hr class="border-primary border-2 w-12">
       </div>
-      <ol class="list-decimal ml-6">
+      <ol class="list-decimal ml-6 font-sans">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
           <li>Imperdiet sed euismod nisi porta lorem mollis aliquam ut.</li>
           <li>Dignissim convallis aenean et tortor at risus viverra adipiscing. In est ante in nibh mauris cursus mattis.</li>
@@ -107,15 +107,19 @@
       <h2 class="text-4xl md:text-5xl font-bold mb-2 ">Latest News</h2>
       <div class="border-t-4 border-primary w-32 mb-4"></div>
     </div>
-      <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
-          <div class="flex flex-col md:flex-row md:space-x-4">
-              <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
-              <div>
-                  <p class="text-gray-500 text-xs mb-2">March 29, 2024</p>
-                  <h3 class="font-bold mb-2">Gunadarma University Researchers Showcase New Breakthroughs in Environmentally Friendly Battery Development</h3>
-              </div>
-          </div>
-      </div>
+    @if($berita)
+    <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
+        <div class="flex flex-col md:flex-row md:space-x-4">
+            <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
+            <div>
+                <p class="text-gray-500 text-xs mb-2">{{ \Carbon\Carbon::parse($berita->created_at)->translatedFormat('l, j F Y') }}</p>
+                <h3 class="font-bold mb-2">{{ $berita->title }}</h3>
+            </div>
+        </div>
+    </div>
+    @endif
+
+
   </div>
   <!-- Section Other News -->
   <div class="flex-1 space-y-4 pt-10">
@@ -270,7 +274,7 @@
 </div>
 
 <div class="container mx-auto my-10">
-  <div class="grid grid-rows-2 md:grid-cols-2 md:gap-2 px-10 md:px-0">
+  <div class="grid grid-rows-2 md:grid-cols-2 md:gap-2 px-10 md:px-20p">
     <!-- Left side: Title -->
     <div class="flex flex-col justify-center">
       <h2 class="text-4xl md:text-5xl font-bold text-center md:text-start">Frequently Asked Questions</h2>

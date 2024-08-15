@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
 {
+
+    public function dashboard(){
+        $berita = Berita::all()->sortByDesc('created_at')->first();
+        // dd($berita);
+        return view('user.dashboard', ['title' => 'Dashboard', 'berita' => $berita]);
+    }
+
     public function tentang(){
         return view('user.tentang', ['title' =>  'Tentang']);
     }
@@ -40,6 +47,7 @@ class ViewController extends Controller
     }
 
     public function dashboardAdmin(){
-        return view('admin.dashboardAdmin', ['title' =>  'Dashboard Admin']);
+        $berita = Berita::count();
+        return view('admin.dashboardAdmin', ['title' =>  'Dashboard Admin'], compact('berita'));
     }
 }

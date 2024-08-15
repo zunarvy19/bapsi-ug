@@ -17,7 +17,7 @@
           <div class="w-auto md:w-[20%] px-14 py-10 bg-primary rounded-lg" id="card">
             <div class="font-bold text-white">
               <h3 class="text-2xl">Jumlah Berita: </h3>
-              <h3 id="datenow" class="text-lg">a</h3>
+              <h3 id="datenow" class="text-lg">{{$berita}}</h3>
               <h3 id="datenow" class="text-lg">Berita</h3>
             </div>
           </div>
