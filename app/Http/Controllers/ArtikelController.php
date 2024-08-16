@@ -12,7 +12,12 @@ class ArtikelController extends Controller
      */
     public function artikel()
     {
-        return view('user.artikel',  ['title' =>'UG on The Press']);
+        return view('user.artikel',  ['title' =>'Artikel UG']);
+    }
+
+    public function index(){
+        $artikel = Artikel::all();
+        return view('admin.artikel.artikel', ['title' => 'Data Artikel'], compact('artikel'));
     }
 
     /**
@@ -20,7 +25,7 @@ class ArtikelController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.artikel.buat', ['title' => 'Buat Artikel']);
     }
 
     /**

@@ -23,7 +23,7 @@
     
     <!-- Right side with the form -->
     <div class="md:flex md:flex-col justify-center items-center w-full md:p-5 my-auto md:w-1/2 bg-white mx-auto">
-        <div class="max-w-md w-full mx-auto">
+        <div class="max-w-md w-full">
             <h2 class="text-3xl font-bold mb-4">Selamat Datang!</h2>
             <p class="text-gray-600 mb-6">Welcome Back!</p>
             

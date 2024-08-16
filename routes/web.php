@@ -28,16 +28,21 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/admin/dashboard-admin', [ViewController::class, 'dashboardAdmin'])->name('admin.dashboardAdmin');
+    // berita
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
     Route::get('/admin/berita/halaman-buat-berita', [BeritaController::class, 'create'])->name('create');
     Route::get('/admin/berita/{berita:slug}', [BeritaController::class, 'show']);
     Route::post('/admin/berita/buat-berita', [BeritaController::class, 'store'])->name('store');
     Route::delete('/admin/hapus-berita/{berita:slug}', [BeritaController::class, 'destroy'])->name('destroy');
     route::get('/admin/berita/checkSlug', [BeritaController::class, 'checkSlug']);
-
-    // edit
     Route::get('/admin/berita/halaman-edit-berita/{berita:slug}/edit', [BeritaController::class, 'edit'])->name('edit');
     Route::put('/admin/berita/edit-berita/{berita:slug}', [BeritaController::class, 'update'])->name('update');
+    // berita end
+
+    // artikel
+    route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('admin.artikel.index');
+    Route::Get('/admin/artikel/halaman-buat-artikel', [ArtikelController::class, 'create'])->name('create');
+    Route::get('/admin/artikel/{artikel:slug}', [ArtikelController::class, 'show']);
 });
 
 Route::get('/', [ViewController::class, 'dashboard'])->name('user.dashboard');
@@ -52,9 +57,6 @@ Route::get('/fasilitas-tik', [ViewController::class, 'fasilitas'])->name('user.f
 Route::get('/infrastruktur-tik', [ViewController::class, 'infrastruktur'])->name('user.infrastruktur');
 Route::get('/berita', [BeritaController::class, 'berita'])->name('user.berita');
 Route::get('/ug-on-the-press', [ArtikelController::class, 'artikel'])->name('user.artikel');
-Route::get('test-login', function(){
-    return view('auth.signin');
-});
 
 
 require __DIR__.'/auth.php';

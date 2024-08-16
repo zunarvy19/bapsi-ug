@@ -4,24 +4,22 @@
 <section class="w-full">
   <div id="mainbar" class="fixed left-0 top-0 pt-16 w-full md:pl-64">
       <div class="px-4 md:px-8">
-          <h1 class="text-start capitalize text-3xl py-5">Data Berita</h1>
+          <h1 class="text-start capitalize text-3xl py-5">Data Artikel</h1>
       <hr class="w-full border border-gray-200">
   
       <div class="mt-20">
         
           <div class="flex justify-between items-center ">
               <div class="flex flex-col">
-                  <h1 class="text-3xl" >Data Berita</h1>
+                  <h1 class="text-3xl" >Data Artikel</h1>
                   <hr class="w-32 border-2 border-primary my-4">
               </div>
               <div>
-                  {{-- @if($bp->isNotEmpty()) --}}
-                  <a href="/admin/berita/halaman-buat-berita">
+                  <a href="/admin/artikel/halaman-buat-artikel">
                       <button type="button" class="text-white bg-red-600 
-                      focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Buat Data
+                      focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Buat Artikel
                       </button>
                   </a>
-                  {{-- @endif --}}
               </div>
           </div>
           
@@ -34,23 +32,23 @@
   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
           <th scope="col" class="px-4 py-1">No. </th>
-          <th scope="col" class="px-4 py-1">Judul Berita</th>
-          <th scope="col" class="px-4 py-4 ">Isi Berita</th> 
-          <th scope="col" class="px-4 py-4 ">Tanggal Berita</th> 
+          <th scope="col" class="px-4 py-1">Judul Artikel</th>
+          <th scope="col" class="px-4 py-4 ">Isi Artikel</th> 
+          <th scope="col" class="px-4 py-4 ">Tanggal Artikel</th> 
           <th scope="col" class="px-4 py-3 text-center">Aksi</th>
       </tr>
   </thead>
   <tbody>
-    @foreach ($berita as $data)
+
     <tr class="border-b dark:border-gray-700">
-        <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$no++}}</th>
-        <td class="px-4 py-3 capitalize">{{$data->title}}</td>
-        <td class="px-4 py-3">{{$data->excerpt}}</td>
-        <td class="px-4 py-3">{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, j F Y') }}</td>
+        <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white"></th>
+        <td class="px-4 py-3 capitalize"></td>
+        <td class="px-4 py-3"></td>
+        <td class="px-4 py-3"></td>
         <td class="px-4 py-3">
                 <ul class=" text-sm flex flex-col md:flex-row items-center justify-center" aria-labelledby="apple-imac-27-dropdown-button">
                     <li>
-                        <a href="/admin/berita/{{$data->slug}}"> 
+                        <a href="/admin/artikel/"> 
                             <button type="button" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                               <svg class="w-5- h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
@@ -61,7 +59,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/berita/halaman-edit-berita/{{$data->slug}}/edit"> 
+                        <a href="/admin/berita/halaman-edit-berita//edit"> 
                             <button type="button" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                                 <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -72,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <form id="delete-form-"  action="/admin/hapus-berita/{{$data->slug}}" method="POST">
+                        <form id="delete-form-"  action="/admin/hapus-berita/" method="POST">
                             @csrf
                             @method('DELETE')
                             <button onclick="" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
@@ -86,7 +84,7 @@
                 </ul>
         </td>
     </tr>
-    @endforeach
+
 
   </table>
   </div>

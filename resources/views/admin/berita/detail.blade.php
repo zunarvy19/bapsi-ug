@@ -19,9 +19,9 @@
           <img src="/img/infra1.png" alt="" class="w-full max-w-3xl mx-auto">
         </div>
       </div>
-      <div class="my-10 prose max-w-none font-sans">
-        {!! $berita->body !!}
-      </div>
+      <div class="my-10 prose lg:prose-sm max-w-none font-sans">
+        {!! str_replace('<a ', '<a style="color: #2563eb;" ', $berita->body) !!}
+    </div>
       <button class="btn bg-primary text-white hover:bg-primary hover:opacity-70"><a href="/admin/berita">Kembali</a></button>
     </div>
   </div>

@@ -44,8 +44,8 @@
 </div>
 
 {{-- About Us --}}
-<div class="mt-40 mb-10 flex sm:w-[80%] mx-auto">
-  <div class="container flex flex-col-reverse md:flex md:flex-row">
+<div class="mt-20 mb-10 flex sm:w-[80%] mx-auto">
+  <div class="container flex flex-col-reverse md:flex md:flex-row mx-auto">
     <div class="text space-y-6 basis-1/2 pt-20">
       <p class="text-4xl md:text-4xl font-bold text-center md:text-start" id="section2">Tentang</p>
       <hr class="border-4 w-28 mx-auto md:mx-0 border-primary">
@@ -79,9 +79,9 @@
         <hr class="border-primary border-2 w-12">
       </div>
       <ol class="list-decimal ml-6 mb-6 text-base font-sans">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-          <li>Imperdiet sed euismod nisi porta lorem mollis aliquam ut.</li>
-          <li>Dignissim convallis aenean et tortor at risus viverra adipiscing. In est ante in nibh mauris cursus mattis.</li>
+          <li>Menjadi pusat unggulan dalam pengelolaan teknologi informasi di lingkungan akademik Universitas Gunadarma.</li>
+          <li>Mengoptimalkan penggunaan teknologi informasi untuk mendukung efisiensi layanan akademik dan administrasi.</li>
+          <li>Mewujudkan inovasi teknologi yang berkelanjutan guna mendukung transformasi digital di bidang pendidikan</li>
       </ol>
 
       <div class="mb-4">
@@ -89,9 +89,9 @@
         <hr class="border-primary border-2 w-12">
       </div>
       <ol class="list-decimal ml-6 font-sans">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-          <li>Imperdiet sed euismod nisi porta lorem mollis aliquam ut.</li>
-          <li>Dignissim convallis aenean et tortor at risus viverra adipiscing. In est ante in nibh mauris cursus mattis.</li>
+          <li>Mengembangkan dan memeliharan infrastruktur teknologi informasi yang handal dan aman.</li>
+          <li>Meningkatkan kualitas layanan akademik berbasis teknologi melalui kolaborasi dengan unit-unit terkait.</li>
+          <li>Mendorong inovasi dalam pengelolaan sistem informasi dan pembelajaran berbasis teknologi di Universitas Gunadarma.</li>
       </ol>
     </div>
 
@@ -103,7 +103,7 @@
   <!-- Section Latest News -->
   <div class="flex-1">
     <div class="flex justify-center flex-col">
-      <h2 class="text-4xl md:text-5xl font-bold mb-2 ">Latest News</h2>
+      <h2 class="text-4xl md:text-5xl font-bold mb-2 ">Berita Terbaru</h2>
       <div class="border-t-4 border-primary w-32 mb-4"></div>
     </div>
     @if($berita)
@@ -153,7 +153,7 @@
 
 <div class="mx-auto" id="ugonthepress">
   <div class="mx-auto text-center mb-12">
-    <h2 class="text-4xl md:text-5xl font-bold mb-2">UG On The Press</h2>
+    <h2 class="text-4xl md:text-5xl font-bold mb-2">Artikel UG</h2>
     <div class="border-t-8 border-primary w-32 mb-4 mx-auto"></div>
   </div>
 
@@ -284,31 +284,35 @@
     <div class="join join-vertical w-full">
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-1" name="my-accordion-4" checked="checked" />
-        <label for="accordion-item-1" class="collapse-title text-xl font-medium bg-primary text-white ">FAQ 1</label>
+        <label for="accordion-item-1" class="collapse-title text-xl font-medium bg-primary text-white ">Apa peran utama BAPSI?</label>
         <div class="collapse-content bg-primary text-white">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          <p>
+            BAPSI (Biro Administrasi Perencanaan dan Sistem Informasi) bertanggung jawab atas perencanaan, pengembangan, implementasi, dan pemeliharaan 
+            fasilitas teknologi informasi di Universitas Gunadarma. 
+            BAPSI juga berkoordinasi dengan unit terkait untuk meningkatkan layanan informasi akademik dan pembelajaran berbasis teknologi.
           </p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-2" name="my-accordion-4" />
-        <label for="accordion-item-2" class="collapse-title text-xl font-medium">FAQ 2</label>
+        <label for="accordion-item-2" class="collapse-title text-xl font-medium">Bagaimana struktur organisasi BAPSI?</label>
         <div class="collapse-content">
-          <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nibh viverra fermentum vitae euismod vivamus id rhoncus. 
-            Volutpat hac non elit morbi torquent tellus. Fermentum posuere elementum cursus fames quam justo nibh magnis inceptos. 
-            Varius malesuada sit montes vulputate fringilla nisi curae. Ac ante nunc nullam nam rhoncus. Auctor aptent class hac posuere senectus aptent.</p>
+          <p>
+            BAPSI merupakan unit struktural yang berada di bawah Rektor dan jajaran Wakil Rektor Universitas Gunadarma. 
+            Fungsi dan wewenangnya bersifat koordinatif bersama unit-unit lain dalam universitas.
+          </p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-3" name="my-accordion-4" />
-        <label for="accordion-item-3" class="collapse-title text-xl font-medium">FAQ 3</label>
+        <label for="accordion-item-3" class="collapse-title text-xl font-medium">Apa saja unit kerja yang berada di bawah BAPSI?</label>
         <div class="collapse-content">
-          <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nibh viverra fermentum vitae euismod vivamus id rhoncus. 
-            Volutpat hac non elit morbi torquent tellus. Fermentum posuere elementum cursus fames quam justo nibh magnis inceptos. 
-            Varius malesuada sit montes vulputate fringilla nisi curae. 
-            Ac ante nunc nullam nam rhoncus. Auctor aptent class hac posuere senectus aptent.</p>
+          <p>
+            BAPSI memiliki lima unit khusus yang dibentuk pada tahun 2007: 
+            Network Operation Center (UG-NOC), System Development Center (UG-SDC), 
+            Media and Information Center (UG-MIC), E-Learning Center (UG-ELC), 
+            dan Research Information Center (UG-RIC).
+          </p>
         </div>
       </div>
     </div>
