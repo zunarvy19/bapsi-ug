@@ -50,14 +50,13 @@
       <p class="text-4xl md:text-4xl font-bold text-center md:text-start" id="section2">Tentang</p>
       <hr class="border-4 w-28 mx-auto md:mx-0 border-primary">
       <p class="text-md md:text-xl text-start md:text-start leading-loose md:leading-loose text-[#626f80] px-10 md:px-0 ">
-        <span class="font-bold">BAPSI</span>
-        , yang merupakan singkatan dari Biro Administrasi Perencanaan dan Sistem Informasi di Universitas Gunadarma, bertanggung jawab atas pengaturan 
+        <span class="font-bold">BAPSI</span>, yang merupakan singkatan dari Biro Administrasi Perencanaan dan Sistem Informasi di Universitas Gunadarma, bertanggung jawab atas pengaturan 
         dan pengembangan sistem informasi universitas. BAPSI bekerja di bawah pengawasan Rektor melalui Wakil Rektor 
         dan memiliki peran penting dalam pengembangan serta pemeliharaan teknologi informasi yang mendukung layanan akademik dan pembelajaran berbasis teknologi informasi.
       </p>
 
       <div class="flex justify-center md:justify-start ">
-        <button type="button" class="text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  md:mx-0">
+        <button type="button" class="text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 btn hover:bg-primary  md:mx-0">
           <a href="/tentang-kami">Selengkapnya &rarr;</a>
         </button>
       </div>
@@ -144,7 +143,7 @@
               <h4 class="font-bold">Gunadarma University Celebrates Grand Inauguration of State-of-the-Art Technology Hub</h4>
           </div>
       </div>
-      <button class="self-start bg-primary text-white px-4 py-2 rounded-lg "><a href="/berita">Berita Lainnya &rarr;</a></button>
+      <button class="self-start bg-primary text-white px-4 py-2 btn hover:bg-primary"><a href="/berita">Berita Lainnya &rarr;</a></button>
   </div>
 </div>
 
@@ -264,7 +263,7 @@
     SILAKAN SEGERA HUBUNGI HELPDESK UNTUK MENDAPATKAN BANTUAN 
     DAN SOLUSI.</h1>
     
-    <button type="button" class="mt-4 bg-white text-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"><a href="/helpdesk">
+    <button type="button" class="mt-4 bg-white text-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 btn hover:bg-white"><a href="/helpdesk">
       <span class="font-semibold">Helpdesk</span>  
     </a></button>
 </div>
@@ -285,23 +284,31 @@
     <div class="join join-vertical w-full">
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-1" name="my-accordion-4" checked="checked" />
-        <label for="accordion-item-1" class="collapse-title text-xl font-medium">Click to open this one and close others</label>
-        <div class="collapse-content">
-          <p>hello</p>
+        <label for="accordion-item-1" class="collapse-title text-xl font-medium bg-primary text-white ">FAQ 1</label>
+        <div class="collapse-content bg-primary text-white">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          </p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-2" name="my-accordion-4" />
-        <label for="accordion-item-2" class="collapse-title text-xl font-medium">Click to open this one and close others</label>
+        <label for="accordion-item-2" class="collapse-title text-xl font-medium">FAQ 2</label>
         <div class="collapse-content">
-          <p>hello</p>
+          <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nibh viverra fermentum vitae euismod vivamus id rhoncus. 
+            Volutpat hac non elit morbi torquent tellus. Fermentum posuere elementum cursus fames quam justo nibh magnis inceptos. 
+            Varius malesuada sit montes vulputate fringilla nisi curae. Ac ante nunc nullam nam rhoncus. Auctor aptent class hac posuere senectus aptent.</p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item border-base-300 border">
         <input type="radio" id="accordion-item-3" name="my-accordion-4" />
-        <label for="accordion-item-3" class="collapse-title text-xl font-medium">Click to open this one and close others</label>
+        <label for="accordion-item-3" class="collapse-title text-xl font-medium">FAQ 3</label>
         <div class="collapse-content">
-          <p>hello</p>
+          <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nibh viverra fermentum vitae euismod vivamus id rhoncus. 
+            Volutpat hac non elit morbi torquent tellus. Fermentum posuere elementum cursus fames quam justo nibh magnis inceptos. 
+            Varius malesuada sit montes vulputate fringilla nisi curae. 
+            Ac ante nunc nullam nam rhoncus. Auctor aptent class hac posuere senectus aptent.</p>
         </div>
       </div>
     </div>

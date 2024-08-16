@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login</title>
+        <title></title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -28,17 +28,16 @@
             <p class="text-gray-600 mb-6">Welcome Back!</p>
             
             <!-- Form -->
-            <form action="{{route('login')}}" method="POST">
-            @csrf
+            <form action="#">
                 <div class="mb-4">
-                    <div>
+                  <div>
                     <x-input-label for="email" :value="__('Email')" class="block text-gray-700"/>
                     <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 </div>
                 <div class="mb-4">
-                    <div class="mt-4">
+                  <div class="mt-4">
                     <x-input-label for="password" :value="__('Password')" class="block text-gray-700"/>
         
                     <x-text-input id="password" class="block mt-1 w-full"

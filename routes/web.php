@@ -52,5 +52,9 @@ Route::get('/fasilitas-tik', [ViewController::class, 'fasilitas'])->name('user.f
 Route::get('/infrastruktur-tik', [ViewController::class, 'infrastruktur'])->name('user.infrastruktur');
 Route::get('/berita', [BeritaController::class, 'berita'])->name('user.berita');
 Route::get('/ug-on-the-press', [ArtikelController::class, 'artikel'])->name('user.artikel');
+Route::get('test-login', function(){
+    return view('auth.signin');
+});
+
 
 require __DIR__.'/auth.php';

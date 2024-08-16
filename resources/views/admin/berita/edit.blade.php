@@ -15,7 +15,7 @@
                   <hr class="w-32 border-2 border-primary my-4">
               </div>
               <div>
-              <a href="/admin/data">
+              <a href="/admin/berita">
               <button type="button" class="text-white bg-red-600 
               focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">Kembali
               </button>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="w-full">
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="small_size">Gambar</label>
-                            <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file" name="gambar" value="{{ old('gambar') }}">
+                            <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file" name="gambar" value="{{ old('gambar', $berita->gambar) }}">
                             @error('body')<p class="peer-invalid:visible text-red-700">{{ $message }}</p>@enderror
                         </div>
                         <div>
