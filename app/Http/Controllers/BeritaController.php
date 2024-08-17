@@ -35,6 +35,7 @@ class BeritaController extends Controller
      */
     public function store(Request $request)
     {
+
         // Validate the request data
         $validatedData = $request->validate([
             'title' => ['required', 'min:5'],
@@ -44,11 +45,11 @@ class BeritaController extends Controller
         ]);
     
         // Debug the validated data
-        ddd($validatedData);
+        // ddd($validatedData);
     
         // Store the image if it exists
         if ($request->hasFile('image')) {
-            $validatedData['image'] = $request->file('image')->store('berita-gambar');
+            $validatedData['image'] = $request->file('image')->store('berita-images');
         }
     
         // Add additional fields
@@ -68,7 +69,7 @@ class BeritaController extends Controller
      */
     public function show(Berita $berita)
     {
-        // dd($berita);
+        // $berita = Berita::where('slug', $berita->slug)->firstOrFail();
         return view('admin.berita.detail', ['title' => 'Detail Berita', 'berita' => $berita]);
     }
 

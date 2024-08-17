@@ -41,11 +41,12 @@
       </tr>
   </thead>
   <tbody>
-    @foreach ($berita as $data)
+    
+    @forelse ($berita as $data)
     <tr class="border-b dark:border-gray-700">
         <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$no++}}</th>
-        <td class="px-4 py-3 capitalize">{{$data->title}}</td>
-        <td class="px-4 py-3">{{$data->excerpt}}</td>
+        <td class="px-4 py-3 capitalize">{!! Str::limit($data->title, 35) !!}</td>
+        <td class="px-4 py-3">{!! Str::limit($data->excerpt, 100) !!}</td>
         <td class="px-4 py-3">{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, j F Y') }}</td>
         <td class="px-4 py-3">
                 <ul class=" text-sm flex flex-col md:flex-row items-center justify-center" aria-labelledby="apple-imac-27-dropdown-button">
@@ -86,7 +87,13 @@
                 </ul>
         </td>
     </tr>
-    @endforeach
+    @empty
+    <tr>
+        <td colspan="9" class="px-4 py-3 text-center text-gray-500 text-xl">
+            Belum ada data
+        </td>
+    </tr>
+    @endforelse
 
   </table>
   </div>

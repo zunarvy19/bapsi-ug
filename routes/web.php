@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
     // berita
     Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
     Route::get('/admin/berita/halaman-buat-berita', [BeritaController::class, 'create'])->name('create');
-    Route::get('/admin/berita/{berita:slug}', [BeritaController::class, 'show']);
+    Route::get('/admin/berita/{berita:slug}', [BeritaController::class, 'show'])->name('berita');
     Route::post('/admin/berita/buat-berita', [BeritaController::class, 'store'])->name('store');
     Route::delete('/admin/hapus-berita/{berita:slug}', [BeritaController::class, 'destroy'])->name('destroy');
     route::get('/admin/berita/checkSlug', [BeritaController::class, 'checkSlug']);
@@ -56,6 +56,7 @@ Route::get('/sop', [ViewController::class, 'sop'])->name('user.sop');
 Route::get('/fasilitas-tik', [ViewController::class, 'fasilitas'])->name('user.fasilitas');
 Route::get('/infrastruktur-tik', [ViewController::class, 'infrastruktur'])->name('user.infrastruktur');
 Route::get('/berita', [BeritaController::class, 'berita'])->name('user.berita');
+Route::get('/berita/{berita:slug}', [BeritaController::class, 'show'])->name('detailBerita');
 Route::get('/ug-on-the-press', [ArtikelController::class, 'artikel'])->name('user.artikel');
 
 
