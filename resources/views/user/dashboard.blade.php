@@ -102,49 +102,59 @@
 <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-6 w-[70%] mx-auto my-10">
   <!-- Section Latest News -->
   <div class="flex-1">
-    <div class="flex justify-center flex-col">
-      <h2 class="text-4xl md:text-5xl font-bold mb-2 ">Berita Terbaru</h2>
-      <div class="border-t-4 border-primary w-32 mb-4"></div>
-    </div>
-    @if($berita)
-    <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
-        <div class="flex flex-col md:flex-row md:space-x-4">
-            <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
-            <div>
-                <p class="text-gray-500 text-xs mb-2">{{ \Carbon\Carbon::parse($berita->created_at)->translatedFormat('l, j F Y') }}</p>
-                <h3 class="font-bold mb-2">{{ $berita->title }}</h3>
-            </div>
-        </div>
-    </div>
-    @endif
-
-
+      <div class="flex justify-center flex-col">
+          <h2 class="text-4xl md:text-5xl font-bold mb-2">Berita Terbaru</h2>
+          <div class="border-t-4 border-primary w-32 mb-4"></div>
+      </div>
+      @if($berita)
+      <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
+          <div class="flex flex-col md:flex-row md:space-x-4">
+              @if ($berita->image)
+              <a href="/berita/{{$berita->slug}}" class="flex gap-x-2">
+              <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="w-full md:w-1/2 rounded-lg">
+              @else
+              <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
+              @endif
+              <div>
+                  <p class="text-gray-500 text-xs mb-2">{{ \Carbon\Carbon::parse($berita->created_at)->translatedFormat('l, j F Y') }}</p>
+                  <h3 class="font-bold mb-2">{{ $berita->title }}</h3>
+              </div>
+            </a>
+          </div>
+      </div>
+      @else
+      <p class="text-gray-500 text-center">Tidak ada berita terbaru.</p>
+      @endif
   </div>
+  
   <!-- Section Other News -->
   <div class="flex-1 space-y-4 pt-10">
+      @if($news->isNotEmpty())
+      @foreach ($news as $data)
       <div class="flex items-start space-x-4">
-          <img src="https://via.placeholder.com/75" alt="News Image" class="w-20 h-20 rounded-lg">
-          <div>
-              <p class="text-gray-500 text-xs mb-2">April 24, 2024</p>
-              <h4 class="font-bold">Gunadarma University Celebrates Grand Inauguration of State-of-the-Art Technology Hub</h4>
-          </div>
+          @if ($data->image)
+          <a href="/berita/{{$data->slug}}"  class="flex gap-x-2">
+            <img src="{{ asset('storage/' . $data->image) }}" alt="News Image" class="w-20 h-20 rounded-lg">
+            @else
+            <img src="https://via.placeholder.com/75" alt="News Image" class="w-20 h-20 rounded-lg">
+            @endif
+            <div>
+                <p class="text-gray-500 text-xs mb-2">{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, j F Y') }}</p>
+                <h4 class="font-bold">{{ $data->title }}</h4>
+            </div>
+          </a>
       </div>
-      <div class="flex items-start space-x-4">
-          <img src="https://via.placeholder.com/75" alt="News Image" class="w-20 h-20 rounded-lg">
-          <div>
-              <p class="text-gray-500 text-xs mb-2">April 24, 2024</p>
-              <h4 class="font-bold">Gunadarma University Celebrates Grand Inauguration of State-of-the-Art Technology Hub</h4>
-          </div>
-      </div>
-      <div class="flex items-start space-x-4">
-          <img src="https://via.placeholder.com/75" alt="News Image" class="w-20 h-20 rounded-lg">
-          <div>
-              <p class="text-gray-500 text-xs mb-2">April 24, 2024</p>
-              <h4 class="font-bold">Gunadarma University Celebrates Grand Inauguration of State-of-the-Art Technology Hub</h4>
-          </div>
-      </div>
-      <button class="self-start bg-primary text-white px-4 py-2 btn hover:bg-primary"><a href="/berita">Berita Lainnya &rarr;</a></button>
+      @endforeach
+      <button class="self-start bg-primary text-white px-4 py-2 btn hover:bg-primary">
+          <a href="/berita">Berita Lainnya &rarr;</a>
+      </button>
+      @else
+      <p class="text-gray-500 text-center">Tidak ada berita lainnya.</p>
+      @endif
   </div>
+</div>
+
+
 </div>
 
 <div class="mx-auto my-20">

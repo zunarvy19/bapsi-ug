@@ -113,8 +113,17 @@ class BeritaController extends Controller
         return redirect()->route('admin.berita.index')->with('status', 'Berita berhasil dihapus');
     }
 
+    public function lamanBerita(){
+        $berita = Berita::paginate(3);
+        return view('user.berita', ['title' => 'Berita'], compact('berita'));
+    }
+
     public function checkSlug(Request $request){
         $slug = SlugService::createSlug(Berita::class, 'slug',  $request->title);
         return response()->json(['slug'=>$slug]);
+    }
+
+    public function detail(Berita $berita){
+        return view('user.detailberita', ['title'=>'Detail Berita', 'berita'=>$berita]);
     }
 }

@@ -55,8 +55,8 @@ Route::get('/download', [ViewController::class, 'download'])->name('user.downloa
 Route::get('/sop', [ViewController::class, 'sop'])->name('user.sop');
 Route::get('/fasilitas-tik', [ViewController::class, 'fasilitas'])->name('user.fasilitas');
 Route::get('/infrastruktur-tik', [ViewController::class, 'infrastruktur'])->name('user.infrastruktur');
-Route::get('/berita', [BeritaController::class, 'berita'])->name('user.berita');
-Route::get('/berita/{berita:slug}', [BeritaController::class, 'show'])->name('detailBerita');
+Route::get('/berita', [BeritaController::class, 'lamanBerita'])->name('lamanBerita');
+Route::get('/berita/{berita:slug}', [BeritaController::class, 'detail'])->name('detail');
 Route::get('/ug-on-the-press', [ArtikelController::class, 'artikel'])->name('user.artikel');
 
 

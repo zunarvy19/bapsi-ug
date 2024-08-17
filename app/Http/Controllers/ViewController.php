@@ -8,10 +8,28 @@ use Illuminate\Http\Request;
 class ViewController extends Controller
 {
 
-    public function dashboard(){
+    public function dashboard()
+    {
         $berita = Berita::all()->sortByDesc('created_at')->first();
-        // dd($berita);
-        return view('user.dashboard', ['title' => 'Dashboard', 'berita' => $berita]);
+        $news = Berita::all()->sortByDesc('created_at')->skip(1)->take(3);
+
+        // dd($news);
+    
+        // Check if $berita or $news is null
+        if ($berita === null || $news === null) {
+            // Handle the case where there are no records or only one record
+            return view('user.dashboard', [
+                'title' => 'Dashboard',
+                'berita' => $berita,
+                'news' => $news
+            ]);
+        }
+    
+        return view('user.dashboard', [
+            'title' => 'Dashboard',
+            'berita' => $berita,
+            'news' => $news
+        ]);
     }
 
     public function tentang(){
