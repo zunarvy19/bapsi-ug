@@ -6,6 +6,7 @@ use App\Models\Berita;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -69,7 +70,6 @@ class BeritaController extends Controller
      */
     public function show(Berita $berita)
     {
-        // $berita = Berita::where('slug', $berita->slug)->firstOrFail();
         return view('admin.berita.detail', ['title' => 'Detail Berita', 'berita' => $berita]);
     }
 
@@ -96,6 +96,14 @@ class BeritaController extends Controller
         }
     
         $validatedData = $request->validate($rules);
+
+        if($request->file('image')){
+            if($request->oldImage){
+                storage::delete('$request->oldImage');
+            }
+            $validatedData['image'] = $request->file('image')->store('berita-images');
+        }
+
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
     

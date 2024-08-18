@@ -43,8 +43,9 @@
                         </div>
                         <div class="w-full">
                             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="small_size">Gambar</label>
-                            <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="small_size" type="file" name="gambar" value="{{ old('gambar', $berita->gambar) }}">
-                            @error('body')<p class="peer-invalid:visible text-red-700">{{ $message }}</p>@enderror
+                            <input type="hidden" name="oldImage" value="{{$berita->image}}">
+                            <input class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="gambar" type="file" name="image" value="{{ old('image', $berita->image) }}">
+                            @error('image')<p class="peer-invalid:visible text-red-700">{{ $message }}</p>@enderror
                         </div>
                         <div>
                             <label for="body" class="block text-sm font-medium text-gray-900">Isi Berita</label>

@@ -42,7 +42,12 @@ Route::middleware('auth')->group(function () {
     // artikel
     route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('admin.artikel.index');
     Route::Get('/admin/artikel/halaman-buat-artikel', [ArtikelController::class, 'create'])->name('create');
-    Route::get('/admin/artikel/{artikel:slug}', [ArtikelController::class, 'show']);
+    Route::post('/admin/artikel/buat-artikel', [ArtikelController::class, 'store'])->name('store');
+    Route::get('/admin/artikel/{artikel:slug}', [ArtikelController::class, 'show'])->name('artikel');
+    Route::delete('/admin/hapus-artikel/{artikel:slug}', [ArtikelController::class, 'destroy'])->name('destroy');
+    route::get('/admin/artikel/checkSlug', [ArtikelController::class, 'checkSlug']);
+    Route::get('/admin/artikel/halaman-edit-artikel/{artikel:slug}/edit', [ArtikelController::class, 'edit'])->name('edit');
+    Route::put('/admin/artikel/edit-artikel/{artikel:slug}', [ArtikelController::class, 'update'])->name('update');
 });
 
 Route::get('/', [ViewController::class, 'dashboard'])->name('user.dashboard');

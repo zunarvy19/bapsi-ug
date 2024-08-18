@@ -40,15 +40,16 @@
   </thead>
   <tbody>
 
+    @forelse ($artikel as $data)
     <tr class="border-b dark:border-gray-700">
-        <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white"></th>
-        <td class="px-4 py-3 capitalize"></td>
-        <td class="px-4 py-3"></td>
-        <td class="px-4 py-3"></td>
+        <th scope="row" class="px-4 py-1 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$no++}}</th>
+        <td class="px-4 py-3 capitalize">{!! Str::limit($data->title, 35) !!}</td>
+        <td class="px-4 py-3">{!! Str::limit($data->excerpt, 100) !!}</td>
+        <td class="px-4 py-3">{{ \Carbon\Carbon::parse($data->created_at)->translatedFormat('l, j F Y') }}</td>
         <td class="px-4 py-3">
                 <ul class=" text-sm flex flex-col md:flex-row items-center justify-center" aria-labelledby="apple-imac-27-dropdown-button">
                     <li>
-                        <a href="/admin/artikel/"> 
+                        <a href="/admin/artikel/{{$data->slug}}"> 
                             <button type="button" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                               <svg class="w-5- h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-width="2" d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z"/>
@@ -59,7 +60,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/admin/berita/halaman-edit-berita//edit"> 
+                        <a href="/admin/artikel/halaman-edit-artikel/{{$data->slug}}/edit"> 
                             <button type="button" data-modal-target="updateProductModal" data-modal-toggle="updateProductModal" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-gray-700 dark:text-gray-200">
                                 <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -70,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <form id="delete-form-"  action="/admin/hapus-berita/" method="POST">
+                        <form id="delete-form-"  action="/admin/hapus-artikel/{{$data->slug}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button onclick="" class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
@@ -84,6 +85,13 @@
                 </ul>
         </td>
     </tr>
+    @empty
+    <tr>
+        <td colspan="9" class="px-4 py-3 text-center text-gray-500 text-xl">
+            Belum ada data
+        </td>
+    </tr>
+    @endforelse
 
 
   </table>

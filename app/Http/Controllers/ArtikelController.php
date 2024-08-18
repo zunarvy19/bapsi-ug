@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArtikelController extends Controller
 {
@@ -33,7 +34,21 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'title' => ['required','min:5'],
+            'slug' => ['required', 'min:10', 'unique:artikels'],
+            'body' => 'required'
+        ]);
+
+        $validateData['user_id'] = auth()->user()->id;
+        $validateData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+        // dd($validateData);
+    
+        // Create a new artikel record
+        Artikel::create($validateData);
+
+        return redirect()->route('admin.artikel.index')->with('status', 'Berita berhasil ditambahkan');
     }
 
     /**
@@ -41,7 +56,7 @@ class ArtikelController extends Controller
      */
     public function show(Artikel $artikel)
     {
-        //
+        return view('admin.artikel.detail', ['title' => 'Detail artikel', 'artikel' => $artikel]);
     }
 
     /**
@@ -49,7 +64,7 @@ class ArtikelController extends Controller
      */
     public function edit(Artikel $artikel)
     {
-        //
+        return view('admin.artikel.edit', ['title' => 'Update Artikel', 'artikel' => $artikel]);
     }
 
     /**
@@ -57,7 +72,22 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, Artikel $artikel)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ];
+    
+        if ($request->slug != $artikel->slug) {
+            $rules['slug'] = 'required|unique:artikels';
+        }
+    
+        $validatedData = $request->validate($rules);
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+    
+        $artikel->update($validatedData);
+    
+        return redirect()->route('admin.artikel.index')->with('status', 'artikel berhasil diupdate');
     }
 
     /**
@@ -65,6 +95,7 @@ class ArtikelController extends Controller
      */
     public function destroy(Artikel $artikel)
     {
-        //
+        Artikel::destroy($artikel->id);
+        return redirect()->route('admin.artikel.index')->with('status', 'Berita berhasil dihapus');
     }
 }
