@@ -122,7 +122,7 @@ class BeritaController extends Controller
     }
 
     public function lamanBerita(){
-        $berita = Berita::paginate(3);
+        $berita = Berita::paginate(6);
         return view('user.berita', ['title' => 'Berita'], compact('berita'));
     }
 

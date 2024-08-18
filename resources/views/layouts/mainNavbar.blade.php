@@ -14,7 +14,7 @@
         @vite(['resources/css/app.css','resources/js/app.js'])
         <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
     </head>
-    <body class="antialiased">
+    <body class="antialiased overflow-x-hidden">
         
 
       <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
@@ -122,8 +122,10 @@
         </div>
     </nav>
     
+<div>
+  @yield('main')
+</div>
 
-@yield('main')
 
 <footer class="relative bg-primary pt-8 pb-6">
     <div class="container mx-auto px-4">

@@ -2,8 +2,10 @@
 
 @section('main')
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
-  <div class="px-12 my-12 py-20 md:px-48 md:my-auto max-w-screen-xl text-start md:text-center md:py-24 lg:py-56">
-      <h1 class="md:border-l-8 md:h-[200px] py-8 md:pt-16 border-primary border-b-2 md:border-primary pl-2 rounded-sm text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl text-center">{{$title}}</h1>
+  <div class="px-10 md:px-48 my-auto max-w-screen-xl text-center py-24 lg:py-56">
+    <h1 class="h-[120px] md:h-[200px] pt-16 border-b-8 md:border-b-0 md:border-l-8 border-primary pl-2 rounded-sm text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-center md:text-start">
+      Artikel UG
+    </h1>
   </div>
 </section>
 
@@ -15,39 +17,40 @@
 
     <div class="my-10">
       
-      <div class="grid-cols-1 sm:grid md:grid-cols-3 ">
-
-        <div
-          class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 dark:bg-surface-dark dark:text-white sm:shrink-0 sm:grow sm:basis-0 border border-gray-100 shadow-lg">
-          <a href="#!">
-            <img
-              class="rounded-t-lg"
-              src="https://tecdn.b-cdn.net/img/new/standard/city/041.webp"
-              alt="Hollywood Sign on The Hill" />
-          </a>
-          <div class="p-6">
-            <h5 class="mb-2 text-xl font-medium leading-tight">Card title</h5>
-            <p class="mb-4 text-base text-gray-400">
-              January 29, 2016
-            </p>
-            <p class="mb-4 text-base">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <div class="flex justify-end">
-              <button
-              type="button"
-              class="inline-block  rounded bg-primary px-4 pb-[5px] pt-[6px] text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out">
-              <a href="#">Baca</a>
-            </button>
+      <div class= "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @forelse ($artikel as $item)
+        <div class="card card-compact bg-base-100 w-full md:w-96 shadow-lg">
+            <div class="p-4">
+                <p class="card-title pt-5">
+                    {{$item->title}}
+                </p>
+                <hr class="">
             </div>
-
-          </div>
+            <div class="card-body -mt-3">
+                <div class="flex flex-row text-primary ">
+                    <p class="text-primary">by <span class="font-bold">Admin</span> || </p>
+                    <p class="-ml-32">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, j F Y') }}</p>
+                </div>
+                <p>{!! Str::limit($item->excerpt, 200) !!}</p>
+                <div class="card-actions justify-end">
+                    <button class="btn bg-primary border-none text-white hover:!bg-primary"><a href="/artikel/{{$item->slug}}">Baca Selengkapnya</a></button>
+                </div>
+            </div>
         </div>
-      </div>
+        @empty
+        <p class="text-gray-500 text-center text-xl">Tidak ada Artikel saat ini.</p>
+        @endforelse
+    </div>
+    
+    
     </div>
 
+    <div class="mt-6">
+      {{ $artikel->links('vendor.pagination.tailwind') }}
+  </div>
+</div>
 
 </div>
+
+
 @endsection

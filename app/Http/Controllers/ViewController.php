@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Artikel;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -13,6 +14,8 @@ class ViewController extends Controller
         $berita = Berita::all()->sortByDesc('created_at')->first();
         $news = Berita::all()->sortByDesc('created_at')->skip(1)->take(3);
 
+        $artikel = Artikel::all()->sortByDesc('created_at')->take(3);
+
         // dd($news);
     
         // Check if $berita or $news is null
@@ -21,14 +24,16 @@ class ViewController extends Controller
             return view('user.dashboard', [
                 'title' => 'Dashboard',
                 'berita' => $berita,
-                'news' => $news
+                'news' => $news,
+                'artikel' => $artikel
             ]);
         }
     
         return view('user.dashboard', [
             'title' => 'Dashboard',
             'berita' => $berita,
-            'news' => $news
+            'news' => $news,
+            'artikel' => $artikel
         ]);
     }
 

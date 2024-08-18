@@ -62,7 +62,8 @@ Route::get('/fasilitas-tik', [ViewController::class, 'fasilitas'])->name('user.f
 Route::get('/infrastruktur-tik', [ViewController::class, 'infrastruktur'])->name('user.infrastruktur');
 Route::get('/berita', [BeritaController::class, 'lamanBerita'])->name('lamanBerita');
 Route::get('/berita/{berita:slug}', [BeritaController::class, 'detail'])->name('detail');
-Route::get('/ug-on-the-press', [ArtikelController::class, 'artikel'])->name('user.artikel');
+Route::get('/ug-on-the-press', [ArtikelController::class, 'lamanArtikel'])->name('lamanArtikel');
+Route::get('/artikel/{artikel:slug)', [ArtikelController::class, 'detail'])->name('detailArtikel');
 
 
 require __DIR__.'/auth.php';

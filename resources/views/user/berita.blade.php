@@ -7,7 +7,7 @@
         Berita
       </h1>
     </div>
-  </section>
+</section>
 
 <div class="container mx-auto p-4 my-16">
     <div class="flex justify-center flex-col mx-auto mb-10">

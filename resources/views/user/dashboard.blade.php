@@ -108,20 +108,20 @@
       </div>
       @if($berita)
       <div class="bg-white p-4 rounded-lg flex flex-col space-y-4">
-          <div class="flex flex-col md:flex-row md:space-x-4">
+          <div class="flex flex-col sm:flex-col md:flex-row md:space-x-4">
               @if ($berita->image)
-              <a href="/berita/{{$berita->slug}}" class="flex gap-x-2">
-              <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="w-full md:w-1/2 rounded-lg">
+              <a href="/berita/{{$berita->slug}}" class="relative md:flex gap-x-2">
+                  <img src="{{ asset('storage/' . $berita->image) }}" alt="News Image" class="w-full md:w-1/2 rounded-lg">
               @else
-              <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
+                  <img src="https://via.placeholder.com/150" alt="News Image" class="w-full md:w-1/2 rounded-lg">
               @endif
-              <div>
+              <div class="mt-2 sm:mt-4 md:mt-0">
                   <p class="text-gray-500 text-xs mb-2">{{ \Carbon\Carbon::parse($berita->created_at)->translatedFormat('l, j F Y') }}</p>
                   <h3 class="font-bold mb-2">{{ $berita->title }}</h3>
               </div>
-            </a>
+              </a>
           </div>
-      </div>
+      </div>    
       @else
       <p class="text-gray-500 text-center">Tidak ada berita terbaru.</p>
       @endif
@@ -131,7 +131,7 @@
   <div class="flex-1 space-y-4 pt-10">
       @if($news->isNotEmpty())
       @foreach ($news as $data)
-      <div class="flex items-start space-x-4">
+      <div class="flex items-start  space-x-4">
           @if ($data->image)
           <a href="/berita/{{$data->slug}}"  class="flex gap-x-2">
             <img src="{{ asset('storage/' . $data->image) }}" alt="News Image" class="w-20 h-20 rounded-lg">
@@ -149,7 +149,7 @@
           <a href="/berita">Berita Lainnya &rarr;</a>
       </button>
       @else
-      <p class="text-gray-500 text-center">Tidak ada berita lainnya.</p>
+      <p class="text-gray-500 text-center text-xl">Tidak ada berita saat ini.</p>
       @endif
   </div>
 </div>
@@ -167,99 +167,41 @@
     <div class="border-t-8 border-primary w-32 mb-4 mx-auto"></div>
   </div>
 
-  <div class="flex justify-center flex-col md:flex-row">
-    <div class="p-4 max-w-md">
-      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md !rounded-br-3xl overflow-hidden">
-        <img class="h-48 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
-        <div class="p-6">
-          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-          <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          <div class="flex items-center flex-wrap">
-            <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-            <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>1.2K
-            </span>
-            <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-              </svg>6
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="p-4 max-w-md">
-      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md !rounded-br-3xl overflow-hidden">
-        <img class="h-48 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
-        <div class="p-6">
-          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-          <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          <div class="flex items-center flex-wrap">
-            <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-            <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>1.2K
-            </span>
-            <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-              </svg>6
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="flex justify-center flex-col md:flex-row mx-auto">
 
-    <div class="p-4 max-w-md">
-      <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-md !rounded-br-3xl overflow-hidden">
-        <img class="h-48 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog">
-        <div class="p-6">
-          <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-          <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-          <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          <div class="flex items-center flex-wrap">
-            <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">
-              Learn More
-              <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="M12 5l7 7-7 7"></path>
-              </svg>
-            </a>
-            <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>1.2K
-            </span>
-            <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-              <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-              </svg>6
-            </span>
+    <div class="flex justify-center flex-col md:flex-row gap-x-10 mx-auto">
+
+
+      @forelse ($artikel as $item)
+      <div class="card card-compact bg-base-100 w-96 shadow-xl">
+        <div class="p-4">
+          <p class="card-title pt-5">
+            {{$item->title}}
+          </p>
+          <hr class="">
+        </div>
+        <div class="card-body -mt-3">
+          <div class="flex flex-row text-primary ">
+            <p class="text-primary">by <span class="font-bold">Admin</span> || </p>
+            <p class="-ml-32">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, j F Y') }}</p>
+          </div>
+          <p>{!! Str::limit($item->excerpt, 200) !!}</p>
+          <div class="card-actions justify-end">
+            <button class="btn bg-primary border-none text-white hover:!bg-primary"><a href="/artikel/{{$item->slug}}">Baca Selengkapnya</a></button>
           </div>
         </div>
       </div>
-    </div>
+      @empty
+      <p class="text-gray-500 text-center text-xl">Tidak ada Artikel saat ini.</p>
+      @endforelse
+
+    
+
+    
+
+
+ 
   </div>
 </div>
 

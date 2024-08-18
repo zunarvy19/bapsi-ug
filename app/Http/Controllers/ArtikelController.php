@@ -11,9 +11,10 @@ class ArtikelController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function artikel()
+    public function lamanArtikel()
     {
-        return view('user.artikel',  ['title' =>'Artikel UG']);
+        $artikel = Artikel::paginate(6);
+        return view('user.artikel', ['title' => 'Artikel UG'], compact('artikel'));
     }
 
     public function index(){
@@ -97,5 +98,9 @@ class ArtikelController extends Controller
     {
         Artikel::destroy($artikel->id);
         return redirect()->route('admin.artikel.index')->with('status', 'Berita berhasil dihapus');
+    }
+
+    public function detail(Artikel $artikel){
+        return view('user.detailberita', ['title'=>'Detail Berita', 'artikel'=>$artikel]);
     }
 }
