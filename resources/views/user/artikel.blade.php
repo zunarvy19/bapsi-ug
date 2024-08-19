@@ -21,7 +21,7 @@
         @forelse ($artikel as $item)
         <div class="card card-compact bg-base-100 w-full md:w-96 shadow-lg">
             <div class="p-4">
-                <p class="card-title pt-5">
+                <p class="card-title pt-5 text-2xl">
                     {{$item->title}}
                 </p>
                 <hr class="">
@@ -29,10 +29,10 @@
             <div class="card-body -mt-3">
                 <div class="flex flex-row text-primary ">
                     <p class="text-primary">by <span class="font-bold">Admin</span> || </p>
-                    <p class="-ml-32">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, j F Y') }}</p>
+                    <p class="-ml-6">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, j F Y') }}</p>
                 </div>
-                <p>{!! Str::limit($item->excerpt, 200) !!}</p>
-                <div class="card-actions justify-end">
+                <p class="text-lg text-justify">{!! Str::limit($item->excerpt, 200) !!}</p>
+                <div class="card-actions justify-end pt-8">
                     <button class="btn bg-primary border-none text-white hover:!bg-primary"><a href="/artikel/{{$item->slug}}">Baca Selengkapnya</a></button>
                 </div>
             </div>

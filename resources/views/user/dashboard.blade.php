@@ -5,12 +5,12 @@
 {{-- Hero --}}
 <section class="bg-center bg-[url('/public/img/home.jpg')] bg-gray-600 bg-blend-multiply">
   <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-4xl  font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl text-start">Biro Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
+      <h1 class="border-l-8 border-primary pl-2 rounded-sm  text-3xl  font-extrabold tracking-tight text-white md:text-6xl text-start">Biro Administrasi Perencanaan dan <br> Sistem Informasi Universitas <br>Gunadarma</h1>
   </div>
 </section>
 
 {{-- Cards --}}
-<div class="flex justify-center items-center flex-col md:flex-row mx-auto gap-y-4 md:gap-x-6 -mt-20">
+<div class="flex justify-center items-center flex-col md:flex-row mx-auto gap-y-4 md:gap-x-6 -mt-16 md:-mt-20">
 
 
 <div class="max-w-sm">
@@ -46,10 +46,10 @@
 {{-- About Us --}}
 <div class="mt-20 mb-10 flex sm:w-[80%] mx-auto">
   <div class="container flex flex-col-reverse md:flex md:flex-row mx-auto">
-    <div class="text space-y-6 basis-1/2 pt-20">
-      <p class="text-4xl md:text-4xl font-bold text-center md:text-start" id="section2">Tentang</p>
+    <div class="text space-y-6 basis-1/2 pt-0 md:pt-20">
+      <p class="text-4xl font-bold text-center md:text-start" id="section2">Tentang</p>
       <hr class="border-4 w-28 mx-auto md:mx-0 border-primary">
-      <p class="text-md md:text-xl text-start md:text-start leading-loose md:leading-loose text-[#626f80] px-10 md:px-0 ">
+      <p class="text-md md:text-xl text-justify md:text-justify leading-loose md:leading-loose text-[#626f80] px-10 md:px-0 ">
         <span class="font-bold">BAPSI</span>, yang merupakan singkatan dari Biro Administrasi Perencanaan dan Sistem Informasi di Universitas Gunadarma, bertanggung jawab atas pengaturan 
         dan pengembangan sistem informasi universitas. BAPSI bekerja di bawah pengawasan Rektor melalui Wakil Rektor 
         dan memiliki peran penting dalam pengembangan serta pemeliharaan teknologi informasi yang mendukung layanan akademik dan pembelajaran berbasis teknologi informasi.
@@ -57,7 +57,7 @@
 
       <div class="flex justify-center md:justify-start ">
         <button type="button" class="text-white bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 btn hover:bg-primary  md:mx-0">
-          <a href="/tentang-kami">Selengkapnya &rarr;</a>
+          <a href="/tentang-kami" class="text-base">Selengkapnya &rarr;</a>
         </button>
       </div>
     </div>
@@ -69,9 +69,9 @@
 
 
 {{-- visi misi --}}
-<div class="w-full md:w-screen h-auto bg-[#F3F4F6]">
-  <div class="py-20">
-    <h1 class="text-center text-4xl  md:text-5xl font-bold" id="fitur">Visi & Misi</h1>
+<div class="w-full mx-auto md:w-screen h-auto bg-[#F3F4F6]">
+  <div class="py-10 md:py-20">
+    <h1 class="text-center text-4xl  md:text-5xl font-bold">Visi & Misi</h1>
     <hr class="border-4 border-primary w-[10rem] mx-auto">
     <div class="bg-white p-6 shadow-lg w-[70%] mx-auto rounded-xl mt-5">
       <div class="mb-4">
@@ -145,9 +145,11 @@
           </a>
       </div>
       @endforeach
-      <button class="self-start bg-primary text-white px-4 py-2 btn hover:bg-primary">
+      <div class="mx-auto md:mx-0 flex justify-center md:justify-start">
+        <button class="self-start bg-primary text-white px-4 py-2 btn hover:bg-primary">
           <a href="/berita">Berita Lainnya &rarr;</a>
       </button>
+      </div>
       @else
       <p class="text-gray-500 text-center text-xl">Tidak ada berita saat ini.</p>
       @endif
@@ -170,24 +172,24 @@
 
   <div class="flex justify-center flex-col md:flex-row mx-auto">
 
-    <div class="flex justify-center flex-col md:flex-row gap-x-10 mx-auto">
+    <div class="flex justify-center flex-col md:flex-row gap-x-10 mx-auto px-10">
 
 
       @forelse ($artikel as $item)
-      <div class="card card-compact bg-base-100 w-96 shadow-xl">
+      <div class="card card-compact bg-base-100 w-96 shadow-lg">
         <div class="p-4">
-          <p class="card-title pt-5">
+          <p class="card-title pt-5 text-2xl">
             {{$item->title}}
           </p>
           <hr class="">
         </div>
         <div class="card-body -mt-3">
-          <div class="flex flex-row text-primary ">
+          <div class="flex flex-row text-primary pb-5">
             <p class="text-primary">by <span class="font-bold">Admin</span> || </p>
             <p class="-ml-32">{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, j F Y') }}</p>
           </div>
-          <p>{!! Str::limit($item->excerpt, 200) !!}</p>
-          <div class="card-actions justify-end">
+          <p class="text-lg text-justify">{!! Str::limit($item->excerpt, 200) !!}</p>
+          <div class="card-actions justify-end pt-8">
             <button class="btn bg-primary border-none text-white hover:!bg-primary"><a href="/artikel/{{$item->slug}}">Baca Selengkapnya</a></button>
           </div>
         </div>
@@ -211,21 +213,21 @@
 
 {{-- Detail Ask --}}
 <div class="w-full  bg-primary p-10 md:p-32">
-  <h1 class="prose text-lg text-start md:text-3xl text-white font-bold">JIKA ANDA BELUM MENEMUKAN INFORMASI YANG ANDA BUTUHKAN, 
+  <h1 class="prose text-lg text-justify md:text-start md:text-4xl text-white font-bold">JIKA ANDA BELUM MENEMUKAN INFORMASI YANG ANDA BUTUHKAN, 
     SILAKAN SEGERA HUBUNGI HELPDESK UNTUK MENDAPATKAN BANTUAN 
     DAN SOLUSI.</h1>
     
     <button type="button" class="mt-4 bg-white text-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 btn hover:bg-white"><a href="/helpdesk">
-      <span class="font-semibold">Helpdesk</span>  
+      <span class="font-semibold text-2xl">Helpdesk</span>  
     </a></button>
 </div>
 
-<div class="mx-auto my-20" id="section2">
+<div class="mx-auto mt-20" id="section2">
   <img src="/img/section.png" alt="section" class="max-w-sm mx-auto">
 </div>
 
-<div class="container mx-auto my-10">
-  <div class="grid grid-rows-2 md:grid-cols-2 md:gap-2 px-10 md:px-20p">
+<div class="container mx-auto my-20 md:my-40 px-10">
+  <div class="flex flex-col md:flex-row justify-between gap-x-52 gap-y-10">
     <!-- Left side: Title -->
     <div class="flex flex-col justify-center">
       <h2 class="text-4xl md:text-5xl font-bold text-center md:text-start">Frequently Asked Questions</h2>

@@ -9,7 +9,7 @@
     </div>
 </section>
 
-<div class="container mx-auto p-4 my-16">
+<div class="container mx-auto p-4 px-8 md:px-0 my-16">
     <div class="flex justify-center flex-col mx-auto mb-10">
       <h1 class="text-4xl font-bold text-center my-2">{{$title}}</h1>
       <hr class="border-4 w-32 mx-auto border-primary">

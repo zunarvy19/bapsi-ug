@@ -25,7 +25,7 @@
           <div class="w-auto md:w-[20%] p-10 bg-primary rounded-lg" id="card">
             <div class="font-bold text-white">
               <h3 class="text-2xl">Jumlah Artikel: </h3>
-              <h3 class="text-lg">21</h3>
+              <h3 class="text-lg">{{$artikel}}</h3>
               <h3 class="text-lg">Artikel</h3>
             </div>
           </div>

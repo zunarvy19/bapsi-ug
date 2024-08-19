@@ -144,36 +144,36 @@
         <div class="w-full lg:w-6/12 px-4">
           <div class="flex flex-wrap items-top mb-6">
             <div class="w-full lg:w-4/12 px-4 ml-auto">
-              <span class="block uppercase text-white text-sm font-semibold mb-2">Quick Links</span>
+              <span class="block uppercase text-white text-lg font-bold mb-2">Quick Links</span>
               <ul class="list-unstyled">
                 <li>
-                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">&gt; Gunadarma</a>
+                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://www.gunadarma.ac.id/">&gt; Gunadarma</a>
                 </li>
                 <li>
-                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">&gt; BAAK</a>
+                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://baak.gunadarma.ac.id/">&gt; BAAK</a>
                 </li>
                 <li>
-                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">&gt; UG Career Center</a>
+                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://tracer.gunadarma.ac.id/">&gt; UG Career Center</a>
                 </li>
                 <li>
-                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">&gt; Staffsite</a>
+                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="http://staffsite.gunadarma.ac.id/">&gt; Staffsite</a>
                 </li>
                 <li>
-                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">&gt; Studentsite</a>
+                  <a class="text-white hover:text-white font-semibold block pb-2 text-sm" href="https://studentsite.gunadarma.ac.id/">&gt; Studentsite</a>
                 </li>
               </ul>
             </div>
             <div class="w-full lg:w-4/12 px-4">
-              <span class="block uppercase text-white text-sm font-semibold mb-2">Contact Us</span>
+              <span class="block uppercase text-white text-lg font-bold mb-2 md:p-0">Contact Us</span>
               <ul class="list-unstyled">
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">&gt; Jl. Margonda Raya 100</a>
+                  <a class="text-white font-semibold block pb-2 text-sm" href="#">&gt; Jl. Margonda Raya 100</a>
                 </li>
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">&gt; example@gmail.com</a>
+                  <a class="text-white font-semibold block pb-2 text-sm " href="#">&gt; mediainformationcenter@gmail.com</a>
                 </li>
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">&gt; +62 (21) 78881112</a>
+                  <a class="text-white font-semibold block pb-2 text-sm" href="#">&gt; +62 (21) 78881112</a>
                 </li>
               </ul>
             </div>

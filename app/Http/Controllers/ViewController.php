@@ -70,7 +70,8 @@ class ViewController extends Controller
     }
 
     public function dashboardAdmin(){
+        $artikel = Artikel::count();
         $berita = Berita::count();
-        return view('admin.dashboardAdmin', ['title' =>  'Dashboard Admin'], compact('berita'));
+        return view('admin.dashboardAdmin', ['title' =>  'Dashboard Admin', 'berita' => $berita, 'artikel' => $artikel]);
     }
 }
