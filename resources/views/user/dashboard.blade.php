@@ -123,7 +123,7 @@
           </div>
       </div>    
       @else
-      <p class="text-gray-500 text-center">Tidak ada berita terbaru.</p>
+      <p class="text-gray-500 text-center"></p>
       @endif
   </div>
   

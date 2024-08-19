@@ -96,7 +96,10 @@
 
   </table>
   </div>
-  
+<div class="mt-6">
+    {{ $artikel->links('vendor.pagination.tailwind') }}
+</div>
+</div>
       </div>
       </div>
     </div>

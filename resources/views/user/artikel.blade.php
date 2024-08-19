@@ -17,7 +17,7 @@
 
     <div class="my-10">
       
-      <div class= "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class= "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-5 md:px-40">
         @forelse ($artikel as $item)
         <div class="card card-compact bg-base-100 w-full md:w-96 shadow-lg">
             <div class="p-4">
@@ -45,7 +45,7 @@
     
     </div>
 
-    <div class="mt-6">
+    <div class="mt-6 px-5 md:px-40">
       {{ $artikel->links('vendor.pagination.tailwind') }}
   </div>
 </div>
