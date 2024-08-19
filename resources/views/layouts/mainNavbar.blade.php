@@ -167,13 +167,13 @@
               <span class="block uppercase text-white text-sm font-semibold mb-2">Contact Us</span>
               <ul class="list-unstyled">
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">Jl. Margonda Raya 100</a>
+                  <a class="text-white font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">&gt; Jl. Margonda Raya 100</a>
                 </li>
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">example@gmail.com</a>
+                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">&gt; example@gmail.com</a>
                 </li>
                 <li>
-                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">+62 (21) 78881112</a>
+                  <a class="text-white font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">&gt; +62 (21) 78881112</a>
                 </li>
               </ul>
             </div>

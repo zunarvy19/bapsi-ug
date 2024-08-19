@@ -100,7 +100,8 @@ class ArtikelController extends Controller
         return redirect()->route('admin.artikel.index')->with('status', 'Berita berhasil dihapus');
     }
 
-    public function detail(Artikel $artikel){
-        return view('user.detailberita', ['title'=>'Detail Berita', 'artikel'=>$artikel]);
+    public function detailArtikel(Artikel $artikel){
+        return view('user.detailArtikel', ['title'=>'Detail Artikel', 'artikel'=>$artikel]);
     }
 }
+
